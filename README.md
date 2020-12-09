@@ -6,3 +6,4 @@
 6.run 'php artisan db:seed'(add the user record into db)
 7.run 'npm install'(download required js library)
 8.run 'npm run dev'(compile the js file)
+9.Since all done, please remember add a new branch 
