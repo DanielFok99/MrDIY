@@ -7,3 +7,8 @@
 7.run 'npm install'(download required js library)
 8.run 'npm run dev'(compile the js file)
 9.Since all done, please remember add a new branch 
+
+Job list
+思欢->Staff, Sales Order, Transaction, Delivery Order
+家福->Category, Product, Specification, Review
+Daniel->Login, Customer, Chatroom

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6593b7ef-79df-42a3-8864-377533e968fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/error/404.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6593b7ef-79df-42a3-8864-377533e968fa" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,7 +183,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607492890144</updated>
       <workItem from="1607492891335" duration="5398000" />
-      <workItem from="1607522493450" duration="23106000" />
+      <workItem from="1607522493450" duration="23416000" />
     </task>
     <task id="LOCAL-00001" summary="Update the interface code, and remember read ReadMe.md file!!!">
       <created>1607546996105</created>
@@ -209,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607547179502</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update 404 page">
+      <created>1607548140102</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607548140102</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +226,7 @@
     <MESSAGE value="Update the interface code, and remember read ReadMe.md file!!!" />
     <MESSAGE value="Update README.md file" />
     <MESSAGE value="Update HomeController.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update HomeController.php" />
+    <MESSAGE value="Update 404 page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 404 page" />
   </component>
 </project>
