@@ -34,7 +34,7 @@
             <form method="post" action="{{route('login')}}">
                 @csrf
                 <div class="login-form-head">
-                    <h4>MyDIY Backend System</h4>
+                    <h4>MrDIY Backend System</h4>
                 </div>
                 <div class="login-form-body">
                     <div class="form-gp pb-3">
