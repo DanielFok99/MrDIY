@@ -23,6 +23,10 @@ mix.styles([
     'public/assets/css/owl.carousel.min.css',
     'public/assets/css/slicknav.min.css',
     'public/assets/css/amcharts.css',
+    'public/assets/css/jquery.dataTables.css',
+    'public/assets/css/dataTables.bootstrap4.min.css',
+    'public/assets/css/responsive.bootstrap.min.css',
+    'public/assets/css/responsive.jqueryui.min.css',
     'public/assets/css/typography.css',
     'public/assets/css/custom-font.css',
     'public/assets/css/default-css.css',
@@ -39,11 +43,15 @@ mix.babel([
     'public/assets/js/metisMenu.min.js',
     'public/assets/js/jquery.slimscroll.min.js',
     'public/assets/js/jquery.slicknav.min.js',
+    'public/assets/js/jquery.dataTables.js',
+    'public/assets/js/jquery.dataTables.min.js',
+    'public/assets/js/dataTables.bootstrap4.min.js',
+    'public/assets/js/dataTables.responsive.min.js',
+    'public/assets/js/responsive.bootstrap.min.js',
     'public/assets/js/line-chart.js',
     'public/assets/js/bar-chart.js',
     'public/assets/js/pie-chart.js',
     'public/assets/js/scripts.js',
     'public/assets/js/plugins.js',
-
 ],'public/js/app2.js');
 
