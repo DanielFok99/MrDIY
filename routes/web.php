@@ -47,7 +47,7 @@ Route::get('/customer', [CustomerController::class, 'index'])->name('customer.in
 Route::get('/chatroom', [ChatRoomController::class, 'index'])->name('chatroom.index');
 
 
-Route::get('/test', [ChatController::class, 'test']);
+//Route::get('/test', [ChatController::class, 'test']);
 
 Route::get('/chat/complete', [ChatController::class, 'updateRoomComplete']);
 Route::get('/chat/status', [ChatController::class, 'updateMessageStatus']);
