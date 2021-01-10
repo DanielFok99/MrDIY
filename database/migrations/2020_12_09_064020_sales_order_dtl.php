@@ -20,6 +20,7 @@ class SalesOrderDtl extends Migration
             $table->string('quantity');
             $table->string('price');
             $table->string('total');
+            $table->string('active');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class SalesOrderDtl extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sales_order_dtl');
     }
 }

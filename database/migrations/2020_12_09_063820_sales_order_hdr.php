@@ -22,6 +22,7 @@ class SalesOrderHdr extends Migration
             $table->string('name');
             $table->string('contact_num');
             $table->string('email');
+            $table->string('active');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class SalesOrderHdr extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sales_order_hdr');
     }
 }

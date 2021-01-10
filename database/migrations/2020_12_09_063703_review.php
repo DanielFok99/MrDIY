@@ -14,14 +14,24 @@ class Review extends Migration
     public function up()
     {
         Schema::create('review', function (Blueprint $table) {
-            $table->string('review_id')->unique()->primary();
-            $table->string('rate');
+            $table->id();
             $table->string('customer_id');
+            $table->string('product_id');
+            $table->string('rate');
             $table->string('title');
             $table->string('comment');
-            $table->string('product_id');
             $table->timestamps();
         });
+
+//        Schema::create('review', function (Blueprint $table) {
+//            $table->string('review_id')->unique()->primary();
+//            $table->string('rate');
+//            $table->string('customer_id');
+//            $table->string('title');
+//            $table->string('comment');
+//            $table->string('product_id');
+//            $table->timestamps();
+//        });
     }
 
     /**
@@ -31,6 +41,6 @@ class Review extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('review');
     }
 }

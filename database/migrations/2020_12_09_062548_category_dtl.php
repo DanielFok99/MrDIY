@@ -20,6 +20,7 @@ class CategoryDtl extends Migration
             $table->string('category_dtl_active');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -29,6 +30,6 @@ class CategoryDtl extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('category_dtl');
     }
 }

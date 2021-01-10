@@ -15,7 +15,6 @@ class CategoryHdr extends Migration
     {
         Schema::create('category_hdr', function (Blueprint $table) {
             $table->string('category_hdr_id')->unique()->primary();
-            $table->string('category_id');
             $table->string('category_hdr_description');
             $table->string('category_hdr_active');
             $table->timestamps();
@@ -29,6 +28,6 @@ class CategoryHdr extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('category_hdr');
     }
 }
