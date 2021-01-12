@@ -10,7 +10,7 @@ class SalesController extends Controller
 {
     public function view()
     {
-        return view('pages.sales_list');
+        return view('pages.backend.sales_list');
     }
 
     public function index()

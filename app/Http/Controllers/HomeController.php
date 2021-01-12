@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -24,6 +23,6 @@ class HomeController extends Controller
      */
     public function index(): Renderable
     {
-        return view('pages.home');
+        return view('pages.backend.home');
     }
 }

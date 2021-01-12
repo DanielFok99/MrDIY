@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function view()
     {
-        return view('pages.category');
+        return view('pages.backend.category');
     }
 
     public function index()
@@ -93,7 +93,7 @@ class CategoryController extends Controller
     public function view_detail()
     {
         $category_hdr_id = request('category_hdr_id');
-        return view('pages.category_detail', ['category_hdr_id' => $category_hdr_id]);
+        return view('pages.backend.category_detail', ['category_hdr_id' => $category_hdr_id]);
     }
 
     public function store_detail()

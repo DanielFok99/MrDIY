@@ -11,6 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
+//BackEnd
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sourceMaps();
@@ -53,5 +54,25 @@ mix.babel([
     'public/assets/js/pie-chart.js',
     'public/assets/js/scripts.js',
     'public/assets/js/plugins.js',
-],'public/js/app2.js');
+], 'public/js/app2.js');
 
+
+//FrontEnd
+mix.js('resources/js/frontend/app.js', 'public/js/frontend')
+    .sass('resources/sass/frontend/app.scss', 'public/css/frontend')
+    .sourceMaps();
+
+
+mix.styles([
+    'resources/assets/css/style.css',
+    'resources/assets/css/etalage.css',
+    'resources/assets/css/megamenu.css',
+], 'public/css/frontend2.css');
+
+
+mix.scripts([
+    'resources/assets/js/megamenu.js',
+    'resources/assets/js/jquery.etalage.min.js',
+    'resources/assets/js/menu_jquery.js',
+    'resources/assets/js/simpleCart.min.js'
+], 'public/js/frontend2.js');

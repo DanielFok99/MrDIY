@@ -16,7 +16,7 @@ class PromoCodeController extends Controller
 
     public function view()
     {
-        return view('pages.promo_code_maintenance');
+        return view('pages.backend.promo_code_maintenance');
     }
 
     public function store(Request $request)

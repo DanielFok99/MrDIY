@@ -12,6 +12,6 @@ class ChatRoomController extends Controller
 
     public function index()
     {
-        return view('pages.chatroom');
+        return view('pages.backend.chatroom');
     }
 }

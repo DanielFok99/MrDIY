@@ -20,6 +20,7 @@ class Review extends Migration
             $table->string('rate');
             $table->string('title');
             $table->string('comment');
+            $table->string('status');
             $table->timestamps();
         });
 

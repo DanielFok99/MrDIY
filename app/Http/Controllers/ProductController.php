@@ -16,7 +16,7 @@ class ProductController extends Controller
             ->get();
 
 
-        return view('pages.product')->with('categories', $categories);
+        return view('pages.backend.product')->with('categories', $categories);
     }
 
     public function index()

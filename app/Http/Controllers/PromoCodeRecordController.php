@@ -18,6 +18,6 @@ class PromoCodeRecordController extends Controller
 
     public function view()
     {
-        return view('pages.promo_code_record');
+        return view('pages.backend.promo_code_record');
     }
 }

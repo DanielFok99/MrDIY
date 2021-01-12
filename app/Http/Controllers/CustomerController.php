@@ -39,6 +39,6 @@ class CustomerController extends Controller
             }
         }
 
-        return view('pages.customer_maintenance');
+        return view('pages.backend.customer_maintenance');
     }
 }

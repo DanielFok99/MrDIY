@@ -10,7 +10,7 @@ class StaffController extends Controller
 {
     public function view()
     {
-        return view('pages.staff_maintenance');
+        return view('pages.backend.staff_maintenance');
     }
 
     public function index()
