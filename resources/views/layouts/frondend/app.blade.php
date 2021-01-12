@@ -136,647 +136,81 @@
                 </div>
                 <!-- start header menu -->
                 <ul class="megamenu skyblue">
-                    <li class="active grid"><a class="color1" href="{{route('index')}}">Home</a></li>
-                    <li class="grid"><a class="color2" href="#">new arrivals</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Clothing</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>kids</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Pools&Tees</a></li>
-                                            <li><a href="{{route('women')}}">shirts</a></li>
-                                            <li><a href="{{route('women')}}">shorts</a></li>
-                                            <li><a href="{{route('women')}}">twinsets</a></li>
-                                            <li><a href="{{route('women')}}">kurts</a></li>
-                                            <li><a href="{{route('women')}}">jackets</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Bags</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Handbag</a></li>
-                                            <li><a href="{{route('women')}}">Slingbags</a></li>
-                                            <li><a href="{{route('women')}}">Clutches</a></li>
-                                            <li><a href="{{route('women')}}">Totes</a></li>
-                                            <li><a href="{{route('women')}}">Wallets</a></li>
-                                            <li><a href="{{route('women')}}">Laptopbags</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>account</h4>
-                                        <ul>
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="{{route('register')}}">create an account</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                            <li><a href="{{route('women')}}">my shopping bag</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Accessories</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Belts</a></li>
-                                            <li><a href="{{route('women')}}">Pens</a></li>
-                                            <li><a href="{{route('women')}}">Eyeglasses</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">Watches</a></li>
-                                            <li><a href="{{route('women')}}">Jewellery</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Footwear</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="color4" href="#">TUXEDO</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Clothing</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>kids</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Pools&Tees</a></li>
-                                            <li><a href="{{route('women')}}">shirts</a></li>
-                                            <li><a href="{{route('women')}}">shorts</a></li>
-                                            <li><a href="{{route('women')}}">twinsets</a></li>
-                                            <li><a href="{{route('women')}}">kurts</a></li>
-                                            <li><a href="{{route('women')}}">jackets</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Bags</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Handbag</a></li>
-                                            <li><a href="{{route('women')}}">Slingbags</a></li>
-                                            <li><a href="{{route('women')}}">Clutches</a></li>
-                                            <li><a href="{{route('women')}}">Totes</a></li>
-                                            <li><a href="{{route('women')}}">Wallets</a></li>
-                                            <li><a href="{{route('women')}}">Laptopbags</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>account</h4>
-                                        <ul>
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="{{route('register')}}">create an account</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                            <li><a href="{{route('women')}}">my shopping bag</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Accessories</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Belts</a></li>
-                                            <li><a href="{{route('women')}}">Pens</a></li>
-                                            <li><a href="{{route('women')}}">Eyeglasses</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">Watches</a></li>
-                                            <li><a href="{{route('women')}}">Jewellery</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Footwear</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="color5" href="#">SWEATER</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Clothing</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>kids</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Pools&Tees</a></li>
-                                            <li><a href="{{route('women')}}">shirts</a></li>
-                                            <li><a href="{{route('women')}}">shorts</a></li>
-                                            <li><a href="{{route('women')}}">twinsets</a></li>
-                                            <li><a href="{{route('women')}}">kurts</a></li>
-                                            <li><a href="{{route('women')}}">jackets</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Bags</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Handbag</a></li>
-                                            <li><a href="{{route('women')}}">Slingbags</a></li>
-                                            <li><a href="{{route('women')}}">Clutches</a></li>
-                                            <li><a href="{{route('women')}}">Totes</a></li>
-                                            <li><a href="{{route('women')}}">Wallets</a></li>
-                                            <li><a href="{{route('women')}}">Laptopbags</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>account</h4>
-                                        <ul>
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="{{route('register')}}">create an account</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                            <li><a href="{{route('women')}}">my shopping bag</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Accessories</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Belts</a></li>
-                                            <li><a href="{{route('women')}}">Pens</a></li>
-                                            <li><a href="{{route('women')}}">Eyeglasses</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">Watches</a></li>
-                                            <li><a href="{{route('women')}}">Jewellery</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Footwear</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="color6" href="#">SHOES</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Clothing</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>kids</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Pools&Tees</a></li>
-                                            <li><a href="{{route('women')}}">shirts</a></li>
-                                            <li><a href="{{route('women')}}">shorts</a></li>
-                                            <li><a href="{{route('women')}}">twinsets</a></li>
-                                            <li><a href="{{route('women')}}">kurts</a></li>
-                                            <li><a href="{{route('women')}}">jackets</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Bags</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Handbag</a></li>
-                                            <li><a href="{{route('women')}}">Slingbags</a></li>
-                                            <li><a href="{{route('women')}}">Clutches</a></li>
-                                            <li><a href="{{route('women')}}">Totes</a></li>
-                                            <li><a href="{{route('women')}}">Wallets</a></li>
-                                            <li><a href="{{route('women')}}">Laptopbags</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>account</h4>
-                                        <ul>
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="{{route('register')}}">create an account</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                            <li><a href="{{route('women')}}">my shopping bag</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Accessories</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Belts</a></li>
-                                            <li><a href="{{route('women')}}">Pens</a></li>
-                                            <li><a href="{{route('women')}}">Eyeglasses</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">Watches</a></li>
-                                            <li><a href="{{route('women')}}">Jewellery</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Footwear</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li><a class="color7" href="#">GLASSES</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Clothing</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>kids</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Pools&Tees</a></li>
-                                            <li><a href="{{route('women')}}">shirts</a></li>
-                                            <li><a href="{{route('women')}}">shorts</a></li>
-                                            <li><a href="{{route('women')}}">twinsets</a></li>
-                                            <li><a href="{{route('women')}}">kurts</a></li>
-                                            <li><a href="{{route('women')}}">jackets</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Bags</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Handbag</a></li>
-                                            <li><a href="{{route('women')}}">Slingbags</a></li>
-                                            <li><a href="{{route('women')}}">Clutches</a></li>
-                                            <li><a href="{{route('women')}}">Totes</a></li>
-                                            <li><a href="{{route('women')}}">Wallets</a></li>
-                                            <li><a href="{{route('women')}}">Laptopbags</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>account</h4>
-                                        <ul>
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="{{route('register')}}">create an account</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                            <li><a href="{{route('women')}}">my shopping bag</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Accessories</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">Belts</a></li>
-                                            <li><a href="{{route('women')}}">Pens</a></li>
-                                            <li><a href="{{route('women')}}">Eyeglasses</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">Watches</a></li>
-                                            <li><a href="{{route('women')}}">Jewellery</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Footwear</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li><a class="color8" href="#">T-SHIRT</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Clothing</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>kids</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">trends</a></li>
-                                            <li><a href="{{route('women')}}">sale</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Bags</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">trends</a></li>
-                                            <li><a href="{{route('women')}}">sale</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>account</h4>
-                                        <ul>
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="{{route('register')}}">create an account</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                            <li><a href="{{route('women')}}">my shopping bag</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Accessories</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">trends</a></li>
-                                            <li><a href="{{route('women')}}">sale</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Footwear</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="color9" href="#">WATCHES</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Clothing</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>kids</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">trends</a></li>
-                                            <li><a href="{{route('women')}}">sale</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Bags</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">trends</a></li>
-                                            <li><a href="{{route('women')}}">sale</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>account</h4>
-                                        <ul>
-                                            <li><a href="#">login</a></li>
-                                            <li><a href="{{route('register')}}">create an account</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                            <li><a href="{{route('women')}}">my shopping bag</a></li>
-                                            <li><a href="{{route('women')}}">brands</a></li>
-                                            <li><a href="{{route('women')}}">create wishlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Accessories</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">trends</a></li>
-                                            <li><a href="{{route('women')}}">sale</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Footwear</h4>
-                                        <ul>
-                                            <li><a href="{{route('women')}}">new arrivals</a></li>
-                                            <li><a href="{{route('women')}}">men</a></li>
-                                            <li><a href="{{route('women')}}">women</a></li>
-                                            <li><a href="{{route('women')}}">accessories</a></li>
-                                            <li><a href="{{route('women')}}">kids</a></li>
-                                            <li><a href="{{route('women')}}">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
+{{--                <ul class="megamenu skyblue">--}}
+{{--                    <li class="active grid"><a class="color1" href="{{route('index')}}">Home</a></li>--}}
+{{--                    <li class="grid"><a class="color2" href="#">new arrivals</a>--}}
+{{--                        <div class="megapanel">--}}
+{{--                            <div class="row">--}}
+{{--                                @foreach( $header as $category)--}}
+{{--                                <div class="col1">--}}
+{{--                                    <div class="h_nav">--}}
+
+{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
+{{--                                            <ul>--}}
+{{--                                                @foreach($category->details as $item)--}}
+{{--                                                <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
+{{--                                                @endforeach--}}
+{{--                                            </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li><a class="color4" href="#">Hot Sales</a>--}}
+{{--                        <div class="megapanel">--}}
+{{--                            <div class="row">--}}
+{{--                                @foreach( $header as $category)--}}
+{{--                                    <div class="col1">--}}
+{{--                                        <div class="h_nav">--}}
+
+{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
+{{--                                            <ul>--}}
+{{--                                                @foreach($category->details as $item)--}}
+{{--                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
+{{--                                                @endforeach--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col2"></div>--}}
+{{--                                <div class="col1"></div>--}}
+{{--                                <div class="col1"></div>--}}
+{{--                                <div class="col1"></div>--}}
+{{--                                <div class="col1"></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li><a class="color5" href="#">Product</a>--}}
+{{--                        <div class="megapanel">--}}
+{{--                            <div class="row">--}}
+{{--                                @foreach( $header as $category)--}}
+{{--                                    <div class="col1">--}}
+{{--                                        <div class="h_nav">--}}
+
+{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
+{{--                                            <ul>--}}
+{{--                                                @foreach($category->details as $item)--}}
+{{--                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
+{{--                                                @endforeach--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col2"></div>--}}
+{{--                                <div class="col1"></div>--}}
+{{--                                <div class="col1"></div>--}}
+{{--                                <div class="col1"></div>--}}
+{{--                                <div class="col1"></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
             </div>
         </div>
     </div>

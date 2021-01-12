@@ -1,6 +1,85 @@
 @extends('layouts.app')
 
 @push('css')
+    <style>
+        .buttons-print{
+            box-shadow:inset 0px 1px 0px 0px #ffffff;
+            background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+            background-color:#ffffff;
+            border-radius:6px;
+            border:1px solid #dcdcdc;
+            display:inline-block;
+            cursor:pointer;
+            color:#666666;
+            font-family:Arial;
+            font-size:10px;
+            font-weight:bold;
+            padding:8px 18px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #ffffff;
+        }
+        .buttons-excel{
+            box-shadow:inset 0px 1px 0px 0px #ffffff;
+            background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+            background-color:#ffffff;
+            border-radius:6px;
+            border:1px solid #dcdcdc;
+            display:inline-block;
+            cursor:pointer;
+            color:#666666;
+            font-family:Arial;
+            font-size:10px;
+            font-weight:bold;
+            padding:8px 18px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #ffffff;
+        }.buttons-pdf{
+             box-shadow:inset 0px 1px 0px 0px #ffffff;
+             background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+             background-color:#ffffff;
+             border-radius:6px;
+             border:1px solid #dcdcdc;
+             display:inline-block;
+             cursor:pointer;
+             color:#666666;
+             font-family:Arial;
+             font-size:10px;
+             font-weight:bold;
+             padding:8px 18px;
+             text-decoration:none;
+             text-shadow:0px 1px 0px #ffffff;
+         }.buttons-copy{
+              box-shadow:inset 0px 1px 0px 0px #ffffff;
+              background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+              background-color:#ffffff;
+              border-radius:6px;
+              border:1px solid #dcdcdc;
+              display:inline-block;
+              cursor:pointer;
+              color:#666666;
+              font-family:Arial;
+              font-size:10px;
+              font-weight:bold;
+              padding:8px 18px;
+              text-decoration:none;
+              text-shadow:0px 1px 0px #ffffff;
+          }.buttons-csv{
+               box-shadow:inset 0px 1px 0px 0px #ffffff;
+               background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+               background-color:#ffffff;
+               border-radius:6px;
+               border:1px solid #dcdcdc;
+               display:inline-block;
+               cursor:pointer;
+               color:#666666;
+               font-family:Arial;
+               font-size:10px;
+               font-weight:bold;
+               padding:8px 18px;
+               text-decoration:none;
+               text-shadow:0px 1px 0px #ffffff;
+           }
+    </style>
 @endpush
 
 @section('breadcrumbs-area')
@@ -51,9 +130,17 @@
 @endsection
 
 @push('js')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/b-print-1.6.5/datatables.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             baseTable = $('#baseTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
                 stateSave: true,
                 destroy: true,
                 "ajax": {
