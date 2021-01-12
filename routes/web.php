@@ -95,7 +95,7 @@ Route::domain('admin.mrdiy.test')->group(function () {
 });
 
 Route::domain('store.mrdiy.test')->group(function () {
-//    Route::get('/home', [HeaderController::class, 'test'])->name('store.home');
+    Route::get('/home', [HeaderController::class, 'test'])->name('store.home');
 
 
     Route::get('/', function () {

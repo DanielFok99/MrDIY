@@ -15,7 +15,6 @@ class ShoppingCardDtl extends Migration
     {
         Schema::create('shopping_cart_dtl', function (Blueprint $table) {
             $table->id();
-            $table->string('cart_dtl_id');
             $table->string('cart_hdr_id');
             $table->string('product_id');
             $table->integer('quantity');

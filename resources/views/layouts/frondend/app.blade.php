@@ -137,80 +137,38 @@
                 <!-- start header menu -->
                 <ul class="megamenu skyblue">
                 </ul>
-{{--                <ul class="megamenu skyblue">--}}
-{{--                    <li class="active grid"><a class="color1" href="{{route('index')}}">Home</a></li>--}}
-{{--                    <li class="grid"><a class="color2" href="#">new arrivals</a>--}}
-{{--                        <div class="megapanel">--}}
-{{--                            <div class="row">--}}
-{{--                                @foreach( $header as $category)--}}
-{{--                                <div class="col1">--}}
-{{--                                    <div class="h_nav">--}}
+                <ul class="megamenu skyblue">
+                    <li class="active grid"><a class="color1" href="{{route('index')}}">Home</a></li>
+                    <li class="grid"><a class="color2" href="#">new arrivals</a></li>
+                    <li><a class="color4" href="#">Hot Sales</a></li>
+                    <li><a class="color6" href="#">Special Offer</a></li>
+                    <li><a class="color5" href="#">Product</a>
+                        <div class="megapanel">
+                            <div class="row">
+                                @foreach( $header as $category)
+                                    <div class="col1">
+                                        <div class="h_nav">
 
-{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
-{{--                                            <ul>--}}
-{{--                                                @foreach($category->details as $item)--}}
-{{--                                                <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
-{{--                                                @endforeach--}}
-{{--                                            </ul>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li><a class="color4" href="#">Hot Sales</a>--}}
-{{--                        <div class="megapanel">--}}
-{{--                            <div class="row">--}}
-{{--                                @foreach( $header as $category)--}}
-{{--                                    <div class="col1">--}}
-{{--                                        <div class="h_nav">--}}
-
-{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
-{{--                                            <ul>--}}
-{{--                                                @foreach($category->details as $item)--}}
-{{--                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
-{{--                                                @endforeach--}}
-{{--                                            </ul>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                            <div class="row">--}}
-{{--                                <div class="col2"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li><a class="color5" href="#">Product</a>--}}
-{{--                        <div class="megapanel">--}}
-{{--                            <div class="row">--}}
-{{--                                @foreach( $header as $category)--}}
-{{--                                    <div class="col1">--}}
-{{--                                        <div class="h_nav">--}}
-
-{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
-{{--                                            <ul>--}}
-{{--                                                @foreach($category->details as $item)--}}
-{{--                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
-{{--                                                @endforeach--}}
-{{--                                            </ul>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                            <div class="row">--}}
-{{--                                <div class="col2"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
+                                            <h4>{{$category->category_hdr_description}}</h4>
+                                            <ul>
+                                                @foreach($category->details as $item)
+                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="row">
+                                <div class="col2"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

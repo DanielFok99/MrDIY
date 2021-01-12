@@ -90,6 +90,6 @@ class HeaderController extends Controller
         }
 
 //        echo  $categoryHdr;
-        return $categoryHdr;
+        return view('pages.frontend.index',['header'=>$categoryHdr]);
     }
 }
