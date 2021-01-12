@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ChatRoomController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Frontend\HeaderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PromoCodeController;
@@ -94,6 +95,9 @@ Route::domain('admin.mrdiy.test')->group(function () {
 });
 
 Route::domain('store.mrdiy.test')->group(function () {
+//    Route::get('/home', [HeaderController::class, 'test'])->name('store.home');
+
+
     Route::get('/', function () {
         return view('pages.frontend.index');
     })->name('index');

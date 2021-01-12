@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Hash;
 
 class StaffController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function view()
     {
         return view('pages.backend.staff_maintenance');
