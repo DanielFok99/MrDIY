@@ -26,8 +26,8 @@ class SalesController extends Controller
     {
         $hdr_id = $request->id;
         $detail = DB::table('sales_order_dtl')
-            ->join('product', 'product.product_code', '=', 'sales_order_dtl.product_id')
-            ->select('sales_order_dtl.active', 'product.product_description', 'sales_order_dtl.sales_dtl_id', 'sales_order_dtl.quantity', 'sales_order_dtl.price', 'sales_order_dtl.total', 'sales_order_dtl.created_at')
+            ->join('product', 'product.product_id', '=', 'sales_order_dtl.product_id')
+            ->select('sales_order_dtl.active', 'product.product_name', 'sales_order_dtl.sales_dtl_id', 'sales_order_dtl.quantity', 'sales_order_dtl.price', 'sales_order_dtl.total', 'sales_order_dtl.created_at')
             ->where('sales_order_dtl.sales_hdr_id', '=', $hdr_id)
             ->get();
         return response($detail);
@@ -36,7 +36,7 @@ class SalesController extends Controller
     public function viewDetail()
     {
         $id = request('id');
-        return view('pages.sales_detail', ['id' => $id]);
+        return view('pages.backend.sales_detail', ['id' => $id]);
     }
 
     public function activeSalesGroup(Request $request)

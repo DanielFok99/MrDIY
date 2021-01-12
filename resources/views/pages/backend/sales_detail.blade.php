@@ -71,7 +71,7 @@
                     "data": "sales_dtl_id"
                 },
                     {
-                        "data": "product_description"
+                        "data": "product_name"
                     },
                     {
                         "data": "quantity"
