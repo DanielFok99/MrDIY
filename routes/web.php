@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ChatRoomController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Frontend\CustomerController as FrontCustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PromoCodeController;
@@ -117,4 +118,8 @@ Route::domain('store.mrdiy.test')->group(function () {
     Route::get('/women', function () {
         return view('pages.frontend.women');
     })->name('women');
+
+
+    Route::post('/login', [FrontCustomerController::class, 'login'])->name('customer.login');
+    Route::post('/register', [FrontCustomerController::class, 'register'])->name('customer.register');
 });

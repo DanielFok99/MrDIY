@@ -19,65 +19,33 @@
                     <script>
                         (function () {
 
-                            // Create input element for testing
-                            var inputs = document.createElement('input');
-
-                            // Create the supports object
-                            var supports = {};
-
-                            supports.autofocus = 'autofocus' in inputs;
-                            supports.required = 'required' in inputs;
-                            supports.placeholder = 'placeholder' in inputs;
-
-                            // Fallback for autofocus attribute
-                            if (!supports.autofocus) {
-
-                            }
-
-                            // Fallback for required attribute
-                            if (!supports.required) {
-
-                            }
-
-                            // Fallback for placeholder attribute
-                            if (!supports.placeholder) {
-
-                            }
-
-                            // Change text inside send button on submit
-                            var send = document.getElementById('register-submit');
-                            if (send) {
-                                send.onclick = function () {
-                                    this.innerHTML = '...Sending';
-                                }
-                            }
-
                         })();
                     </script>
                     <div class="registration_form">
                         <!-- Form -->
-                        <form id="registration_form" action="contact.php" method="post">
+                        <form id="registration_form" action="{{route('customer.register')}}" method="post">
+                            @csrf
                             <div>
                                 <label>
-                                    <input placeholder="first name:" type="text" tabindex="1" required autofocus>
+                                    <input name="first_name" placeholder="First Name:" type="text" required autofocus>
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input placeholder="last name:" type="text" tabindex="2" required autofocus>
+                                    <input name="last_name" placeholder="Last Name:" type="text" required autofocus>
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input placeholder="email address:" type="email" tabindex="3" required>
+                                    <input name="email" placeholder="Email Address:" type="email" required>
                                 </label>
                             </div>
                             <div class="sky-form">
                                 <div class="sky_form1">
                                     <ul>
-                                        <li><label class="radio left"><input type="radio" name="radio"
+                                        <li><label class="radio left"><input type="radio" name="gender" value="0"
                                                                              checked=""><i></i>Male</label></li>
-                                        <li><label class="radio"><input type="radio" name="radio"><i></i>Female</label>
+                                        <li><label class="radio"><input type="radio" name="gender" value="1"><i></i>Female</label>
                                         </li>
                                         <div class="clearfix"></div>
                                     </ul>
@@ -85,12 +53,22 @@
                             </div>
                             <div>
                                 <label>
-                                    <input placeholder="password" type="password" tabindex="4" required>
+                                    <input name="contact" placeholder="Contact" type="tel" required>
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input placeholder="retype password" type="password" tabindex="4" required>
+                                    <input name="billing_address" placeholder="Billing Address" type="text" required>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input name="password" placeholder="Password" type="password" required>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input placeholder="Retype Password" type="password" required>
                                 </label>
                             </div>
                             <div>
@@ -108,15 +86,16 @@
                     <h2>existing user</h2>
                     <div class="registration_form">
                         <!-- Form -->
-                        <form id="registration_form" action="contact.php" method="post">
+                        <form id="registration_form" action="{{route('customer.login')}}" method="post">
+                            @csrf
                             <div>
                                 <label>
-                                    <input placeholder="email:" type="email" tabindex="3" required>
+                                    <input placeholder="Email:" name="email" type="email" required>
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input placeholder="password" type="password" tabindex="4" required>
+                                    <input placeholder="Password" name="password" type="password" required>
                                 </label>
                             </div>
                             <div>
