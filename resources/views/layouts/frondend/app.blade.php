@@ -81,33 +81,51 @@
                     <!-- start header_right -->
                     <div class="header_right">
                         <div class="rgt-bottom">
-                            <div class="log">
-                                <div class="login">
-                                    <div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-                                        <div id="loginBox">
-                                            <form id="loginForm">
-                                                <fieldset id="body">
-                                                    <fieldset>
-                                                        <label for="email">Email Address</label>
-                                                        <input type="text" name="email" id="email">
+                            @if(!Auth::guard('customer')->check())
+                                <div class="log">
+                                    <div class="login">
+                                        <div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
+                                            <div id="loginBox">
+                                                <form id="loginForm" method="post" action="{{route('customer.login')}}">
+                                                    @csrf
+                                                    <fieldset id="body">
+                                                        <fieldset>
+                                                            <label for="email">Email Address</label>
+                                                            <input type="text" name="email" id="email"
+                                                                   autocomplete="email">
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <label for="password">Password</label>
+                                                            <input type="password" name="password" id="password"
+                                                                   autocomplete="password">
+                                                        </fieldset>
+                                                        <input type="submit" id="login" value="Sign in">
+                                                        <label for="checkbox"><input type="checkbox" name="remember"
+                                                                                     id="checkbox"> <i>Remember
+                                                                me</i></label>
                                                     </fieldset>
-                                                    <fieldset>
-                                                        <label for="password">Password</label>
-                                                        <input type="password" name="password" id="password">
-                                                    </fieldset>
-                                                    <input type="submit" id="login" value="Sign in">
-                                                    <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember
-                                                            me</i></label>
-                                                </fieldset>
-                                                <span><a href="#">Forgot your password?</a></span>
-                                            </form>
+                                                    <span><a href="#">Forgot your password?</a></span>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="reg">
-                                <a href="{{route('register')}}">REGISTER</a>
-                            </div>
+                                <div class="reg">
+                                    <a href="{{route('customer.index')}}">REGISTER</a>
+                                </div>
+                            @else
+                                <div class="log">
+                                    <div class="login">
+                                        <div id="loginContainer" style="visibility: hidden"><a href="#" id="loginButton"
+                                                                                               style=""><span> </span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reg">
+                                    <a id="loginButton"
+                                       href="{{route('customer.detail')}}">{{Auth::guard('customer')->user()->customer_firstname}}</a>
+                                </div>
+                            @endif
                             <div class="cart box_1">
                                 <a href="{{route('checkout')}}">
                                     <h3><span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity"
@@ -783,6 +801,7 @@
 
     @yield('content')
 
+    <customer-chat></customer-chat>
 
     <div class="foot-top">
         <div class="container">
@@ -875,13 +894,39 @@
         </div>
     </div>
 </div>
-
+<beautiful-chat
+    :participants="participants"
+    :titleImageUrl="titleImageUrl"
+    :onMessageWasSent="onMessageWasSent"
+    :messageList="messageList"
+    :newMessagesCount="newMessagesCount"
+    :isOpen="isChatOpen"
+    :close="closeChat"
+    :icons="icons"
+    :open="openChat"
+    :showEmoji="true"
+    :showFile="true"
+    :showEdition="true"
+    :showDeletion="true"
+    :showTypingIndicator="showTypingIndicator"
+    :showLauncher="true"
+    :showCloseButton="true"
+    :colors="colors"
+    :alwaysScrollToBottom="alwaysScrollToBottom"
+    :disableUserListToggle="false"
+    :messageStyling="messageStyling"
+    @onType="handleOnType"
+    @edit="editMessage"/>
 
 <script type="module">
 
     Vue.use(Chat);
+    Vue.use(CustomerChat);
     const app = new Vue({
         el: '#app',
+        components: {
+            CustomerChat,
+        },
     });
 </script>
 @stack('js')

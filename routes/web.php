@@ -111,15 +111,21 @@ Route::domain('store.mrdiy.test')->group(function () {
         return view('pages.frontend.details');
     })->name('details');
 
-    Route::get('/register', function () {
-        return view('pages.frontend.register');
-    })->name('register');
-
     Route::get('/women', function () {
         return view('pages.frontend.women');
     })->name('women');
 
 
+    Route::get('/test', function () {
+        dd(Auth::guard('customer')->check());
+    });
     Route::post('/login', [FrontCustomerController::class, 'login'])->name('customer.login');
+    Route::get('/logout', function () {
+        Auth::guard('customer')->logout();
+    });
+    Route::get('/register', [FrontCustomerController::class, 'showRegisterForm'])->name('customer.index');
     Route::post('/register', [FrontCustomerController::class, 'register'])->name('customer.register');
+    Route::get('/user', [FrontCustomerController::class, 'userDetail'])->name('customer.detail');
+    Route::post('/user', [FrontCustomerController::class, 'updateDetail'])->name('customer.detail.update');
+    Route::post('/password/update', [FrontCustomerController::class, 'passwordUpdate'])->name('customer.password.update');
 });

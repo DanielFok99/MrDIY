@@ -8,8 +8,12 @@
             <!-- start registration -->
             <div class="registration">
                 <div class="registration_left">
-                    <h2>new user? <span> create an account </span></h2>
-                    <!-- [if IE]
+                    @isset($message)
+                        <h2 style="color: #ff0e0e">Customer Already Exists</h2>
+                    @else
+                        <h2>new user? <span> create an account </span></h2>
+                @endisset
+                <!-- [if IE]
                         < link rel='stylesheet' type='text/css' href='ie.css'/>
                      [endif] -->
 
@@ -27,38 +31,57 @@
                             @csrf
                             <div>
                                 <label>
-                                    <input name="first_name" placeholder="First Name:" type="text" required autofocus>
+                                    <input name="first_name" value="{{old('first_name')}}" placeholder="First Name:"
+                                           type="text" required autofocus>
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input name="last_name" placeholder="Last Name:" type="text" required autofocus>
+                                    <input name="last_name" value="{{old('last_name')}}" placeholder="Last Name:"
+                                           type="text" required autofocus>
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input name="email" placeholder="Email Address:" type="email" required>
+                                    <input name="register_email" value="{{old('register_email')}}"
+                                           placeholder="Email Address:"
+                                           type="email" required>
                                 </label>
                             </div>
                             <div class="sky-form">
                                 <div class="sky_form1">
                                     <ul>
-                                        <li><label class="radio left"><input type="radio" name="gender" value="0"
-                                                                             checked=""><i></i>Male</label></li>
-                                        <li><label class="radio"><input type="radio" name="gender" value="1"><i></i>Female</label>
-                                        </li>
+                                        @if(old('gender') == '0')
+                                            <li><label class="radio left"><input type="radio" name="gender" value="0"
+                                                                                 checked=""><i></i>Male</label></li>
+                                            <li><label class="radio"><input type="radio" name="gender" value="1"><i></i>Female</label>
+                                            </li>
+                                        @elseif(old('gender') == '1')
+                                            <li><label class="radio left"><input type="radio" name="gender" value="0"
+                                                    ><i></i>Male</label></li>
+                                            <li><label class="radio"><input type="radio" name="gender" value="1"
+                                                                            checked=""><i></i>Female</label>
+                                            </li>
+                                        @else
+                                            <li><label class="radio left"><input type="radio" name="gender" value="0"
+                                                                                 checked=""><i></i>Male</label></li>
+                                            <li><label class="radio"><input type="radio" name="gender" value="1"><i></i>Female</label>
+                                            </li>
+                                        @endif
                                         <div class="clearfix"></div>
                                     </ul>
                                 </div>
                             </div>
                             <div>
                                 <label>
-                                    <input name="contact" placeholder="Contact" type="tel" required>
+                                    <input name="contact" value="{{old('contact')}}" placeholder="Contact" type="tel"
+                                           required>
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input name="billing_address" placeholder="Billing Address" type="text" required>
+                                    <input name="billing_address" value="{{old('billing_address')}}"
+                                           placeholder="Billing Address" type="text" required>
                                 </label>
                             </div>
                             <div>
@@ -90,7 +113,8 @@
                             @csrf
                             <div>
                                 <label>
-                                    <input placeholder="Email:" name="email" type="email" required>
+                                    <input placeholder="Email:" value="{{old('email')}}" name="email" type="email"
+                                           required>
                                 </label>
                             </div>
                             <div>
