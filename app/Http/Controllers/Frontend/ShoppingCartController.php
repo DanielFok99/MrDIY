@@ -18,10 +18,10 @@ class ShoppingCartController extends Controller
 //        }
 
         $product_id = request('product_id');
-        $customer_id = Auth::user()->id;
+        $customer_id = Auth::guard('customer')->user()->id;
         $cart = DB::table('shopping_cart_hdr')
-            ->select('id','total')
-            ->where('customer_id','=',$customer_id)
+            ->select('id', 'total')
+            ->where('customer_id', '=', $customer_id)
             ->first();
         if($cart == TRUE){
             $chk_product = DB::table('shopping_cart_dtl')
@@ -134,14 +134,16 @@ class ShoppingCartController extends Controller
         }
 
         $customer_id = Auth::guard('customer')->user()->id;
+
+//        dd($customer_id);
         $get_hdr = DB::table('shopping_cart_hdr')
             ->select('id')
             ->where('customer_id', '=', $customer_id)
             ->first();
         $product = DB::table('shopping_cart_dtl')
-            ->join('product','product.product_id','=','shopping_cart_dtl.product_id')
-            ->select('shopping_cart_dtl.id','shopping_cart_dtl.product_id','product.product_name','shopping_cart_dtl.quantity','shopping_cart_dtl.price','shopping_cart_dtl.total')
-            ->where('shopping_cart_dtl.cart_hdr_id','=',$get_hdr->id)
+            ->join('product', 'product.product_id', '=', 'shopping_cart_dtl.product_id')
+            ->select('shopping_cart_dtl.id', 'shopping_cart_dtl.product_id', 'product.product_name', 'shopping_cart_dtl.quantity', 'shopping_cart_dtl.price', 'shopping_cart_dtl.total')
+            ->where('shopping_cart_dtl.cart_hdr_id', '=', $get_hdr->id)
             ->get();
         $total = 0;
         foreach ($product as $item){
@@ -158,11 +160,11 @@ class ShoppingCartController extends Controller
     public function add_promo(Request $request)
     {
         $promo_code = $request->promo_code;
-        $customer_id = Auth::user()->id;
+        $customer_id = Auth::guard('customer')->user()->id;
         $chk_promo = DB::table('promo_code')
-            ->select('rate','type')
-            ->where('promo_code','=',$promo_code)
-            ->where('active','=','yes')
+            ->select('rate', 'type')
+            ->where('promo_code', '=', $promo_code)
+            ->where('active', '=', 'yes')
             ->first();
         $cart_total = DB::table('shopping_cart_hdr')
             ->select('total')
