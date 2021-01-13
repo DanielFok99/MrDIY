@@ -85,7 +85,7 @@ class ShoppingCartController extends Controller
 
     public function destroyAll()
     {
-        $customer_id = Auth::user()->id;
+        $customer_id = Auth::guard('customer')->user()->id;
         $dtl = DB::table('shopping_cart_hdr')
             ->select('id')
             ->first();
@@ -133,10 +133,10 @@ class ShoppingCartController extends Controller
 //            dd($item);
         }
 
-        $customer_id = Auth::user()->id;
+        $customer_id = Auth::guard('customer')->user()->id;
         $get_hdr = DB::table('shopping_cart_hdr')
             ->select('id')
-            ->where('customer_id','=',$customer_id)
+            ->where('customer_id', '=', $customer_id)
             ->first();
         $product = DB::table('shopping_cart_dtl')
             ->join('product','product.product_id','=','shopping_cart_dtl.product_id')
