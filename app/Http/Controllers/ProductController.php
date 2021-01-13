@@ -15,7 +15,6 @@ class ProductController extends Controller
             ->where('category_dtl_active', '=', 'yes')
             ->get();
 
-
         return view('pages.backend.product')->with('categories', $categories);
     }
 
@@ -29,7 +28,7 @@ class ProductController extends Controller
         return response($product);
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $product_id = request('product_id');
         $chk_product = DB::table('product')
@@ -38,7 +37,7 @@ class ProductController extends Controller
             ->first();
 
         if ($chk_product == true) {
-            return redirect('/product')->with('msg', 'Product exist.');
+            return redirect('/product');
         } else {
             $product = new Product();
 
@@ -48,15 +47,32 @@ class ProductController extends Controller
             $product->price = request('price');
             $product->category_dtl_id = request('category_dtl_id');
             $product->quantity = request('quantity');
-
-
             $product->rate = '0';
-            $product->product_status = 'new';
+            $product->image_url = '/temperory';
+            $product->gallery_url = '/temperory';
+            $product->product_status = request('product_status');
             $product->product_active = 'yes';
+
+            // dd($request->input());
+            // Image handling
+            // if($request->hasFile('image_file'))
+            // {
+            //     if($request->file('image_file')->isValid())
+            //     {
+            //        dd($request->file('image_file'));
+            //         $extension = $request->image_file->extension();
+            //         $request->image_file->storeAs("/product/".$product->product_id, $validated['name'].".".$extension);
+            //     }
+            //     // return redirect('/category');
+            // }
+            // else
+            // {
+            //     return redirect('/review');
+            // }
 
             $product->save();
 
-            return redirect('/product')->with('msg', 'Product created.');
+            return redirect('/product');
         }
     }
 
