@@ -24,6 +24,8 @@ class Product extends Migration
             $table->string('category_dtl_id');
             $table->string('quantity');
             $table->string('rate');
+            $table->string('image_url');
+            $table->string('gallery_url');
             $table->string('product_status');
             $table->string('product_active');
             $table->timestamps();

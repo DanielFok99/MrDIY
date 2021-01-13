@@ -10,6 +10,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $category_dtl = 'category_dtl';
-    protected $category_hdr = 'category_hdr';
+    protected $table = 'category_dtl';
+    protected $primaryKey = 'category_dtl_id';
+    // protected $category_hdr = 'category_hdr';
 }

@@ -11,8 +11,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PromoCodeController;
 use App\Http\Controllers\PromoCodeRecordController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\FrontProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -91,8 +93,12 @@ Route::domain('admin.mrdiy.test')->group(function () {
     Route::get('/product/data', [ProductController::class, 'index'])->name('product.data');
     Route::post('/product', [ProductController::class, 'store'])->name('product.store');
     Route::post('/product/update', [ProductController::class, 'update'])->name('product.update');
-    Route::get('product/active_inactive/{product_id}', [ProductController::class, 'active'])->name('product.active_inactive');
+    Route::get('/product/active_inactive/{product_id}', [ProductController::class, 'active'])->name('product.active_inactive');
 
+// Review Routes
+    Route::get('/review', [ReviewController::class, 'view'])->name('review.view');
+    Route::get('/review/data', [ReviewController::class, 'index'])->name('review.data');
+    Route::get('/review/active_inactive/{id}', [ReviewController::class, 'active'])->name('review.active_inactive');
 
 });
 
@@ -110,6 +116,9 @@ Route::domain('store.mrdiy.test')->group(function () {
     Route::get('/', function () {
         return view('pages.frontend.index');
     })->name('index');
+    Route::get('/', [FrontProductController::class, 'index'])->name('index');
+    Route::get('/category/{category_dtl_id}', [FrontProductController::class, 'category'])->name('front_product.category');
+    Route::get('/product/{product_id}', [FrontProductController::class, 'detail'])->name('front_product.detail');
 
     Route::get('/checkout', function () {
         return view('pages.frontend.checkout');
@@ -122,6 +131,10 @@ Route::domain('store.mrdiy.test')->group(function () {
     Route::get('/details', function () {
         return view('pages.frontend.details');
     })->name('details');
+
+    Route::get('/register', function () {
+        return view('pages.frontend.register');
+    })->name('register');
 
     Route::get('/women', function () {
         return view('pages.frontend.women');
