@@ -109,16 +109,16 @@
                                 <a href="{{route('register')}}">REGISTER</a>
                             </div>
                             <div class="cart box_1">
-                                <a href="{{route('checkout')}}">
+                                <a href="{{route('shopping_cart.index')}}">
                                     <h3><span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity"
                                                                                            class="simpleCart_quantity">0</span>
                                         items)<img src="{{asset('assets/frontend/images/bag.png')}}" alt=""></h3>
                                 </a>
-                                <p><a href="javascript:" class="simpleCart_empty">(empty cart)</a></p>
+                                <p><a href="javascript:" onclick="aFunction()" class="simpleCart_empty" >(empty cart)</a></p>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="create_btn">
-                                <a href="{{route('checkout')}}">CHECKOUT</a>
+                                <a href="{{route('shopping_cart.index')}}">CHECKOUT</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -268,6 +268,19 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    function aFunction() {
+        $.ajax({
+            type:'GET',
+            url:'/shopping_cart/destroyAll',
+            data:'',
+            success: function(){
+                console.log('ok');
+                // $('#form').find('#add_btn').attr('disabled', true);
+            }
+        });
+    }
+</script>
 
 <script type="module">
 

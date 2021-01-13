@@ -5,6 +5,7 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ChatRoomController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Frontend\HeaderController;
+use App\Http\Controllers\Frontend\ShoppingCartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PromoCodeController;
@@ -96,6 +97,13 @@ Route::domain('admin.mrdiy.test')->group(function () {
 
 Route::domain('store.mrdiy.test')->group(function () {
     Route::get('/home', [HeaderController::class, 'test'])->name('store.home');
+    Route::get('/add_to_cart/{product_id}', [ShoppingCartController::class, 'store'])->name('shopping_cart.store');
+    Route::get('/shopping_cart/destroyAll', [ShoppingCartController::class, 'destroyAll'])->name('shopping_cart.destroyAll');
+    Route::get('/shopping_cart/destroy/{id}', [ShoppingCartController::class, 'destroy'])->name('shopping_cart.destroy');
+    Route::get('/shopping_cart', [ShoppingCartController::class, 'index'])->name('shopping_cart.index');
+    Route::post('/shopping_cart/add_promo', [ShoppingCartController::class, 'add_promo'])->name('shopping_cart.add_promo');
+//    Route::get('/make_payment', [ShoppingCartController::class, 'make_payment'])->name('payment.index');
+
 
 
     Route::get('/', function () {
