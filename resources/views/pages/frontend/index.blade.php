@@ -3,6 +3,7 @@
 
 @endpush
 @section('content')
+    @csrf
     <div class="arriv">
         <div class="container">
             <div class="arriv-top">
@@ -102,7 +103,7 @@
                         <div class="special-info grid_1 simpleCart_shelfItem">
                             <h5>Commodo consequat</h5>
                             <div class="item_add"><span class="item_price"><h6>ONLY $14.00</h6></span></div>
-                            <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
+                            <div class="item_add"><span class="item_price"><a href="#" onclick="myFunction('02')">add to cart</a></span></div>
                         </div>
                     </li>
                     <li>
@@ -111,7 +112,7 @@
                         <div class="special-info grid_1 simpleCart_shelfItem">
                             <h5>Voluptate velit</h5>
                             <div class="item_add"><span class="item_price"><h6>ONLY $37.00</h6></span></div>
-                            <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
+                            <div class="item_add"><span class="item_price"><a href="#" onclick="myFunction('01')">add to cart</a></span></div>
                         </div>
                     </li>
                     <div class="clearfix"></div>
@@ -119,6 +120,22 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+
+            function myFunction($event) {
+                $.ajax({
+                    type:'GET',
+                    url:'/add_to_cart/'+$event,
+                    data:'',
+                    success: function(){
+                        console.log($event);
+                        // $('#form').find('#add_btn').attr('disabled', true);
+                    }
+                });
+
+            }
+    </script>
+
 @endsection
 
 @push('js')
