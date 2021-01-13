@@ -44,7 +44,7 @@
                                 <div class="special-info grid_1 simpleCart_shelfItem">
                                     <h5>{{ $product['product_name'] }}</h5>
                                     <div class="item_add"><span class="item_price"><h6>RM {{ $product['price'] }}</h6></span></div>
-                                    <div class="item_add"><span class="item_price"><a href="#">Add to Cart</a></span></div>
+                                    <div class="item_add"><span class="item_price"><a href="#" onclick="myFunction({{$product['product_id']}})">Add to Cart</a></span></div>
                                 </div>
                             </li>
                         @endforeach
@@ -65,7 +65,7 @@
                                 <div class="special-info grid_1 simpleCart_shelfItem">
                                     <h5>{{ $product['product_name'] }}</h5>
                                     <div class="item_add"><span class="item_price"><h6>RM {{ $product['price'] }}</h6></span></div>
-                                    <div class="item_add"><span class="item_price"><a href="#">Add to Cart</a></span></div>
+                                    <div class="item_add"><span class="item_price"><a href="#" onclick="myFunction({{$product['product_id']}})">Add to Cart</a></span></div>
                                 </div>
                             </li>
                         @endforeach
@@ -106,7 +106,7 @@
                         <div class="special-info grid_1 simpleCart_shelfItem">
                             <h5>Consectetur adipis</h5>
                             <div class="item_add"><span class="item_price"><h6>ONLY $60.00</h6></span></div>
-                            <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
+                            <div class="item_add"><span class="item_price"><a href="#"  onclick="myFunction('03')">add to cart</a></span></div>
                         </div>
                     </li>
                     <li>
@@ -144,7 +144,6 @@
                         // $('#form').find('#add_btn').attr('disabled', true);
                     }
                 });
-
             }
     </script>
 
