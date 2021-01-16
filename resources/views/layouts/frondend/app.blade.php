@@ -81,44 +81,62 @@
                     <!-- start header_right -->
                     <div class="header_right">
                         <div class="rgt-bottom">
-                            <div class="log">
-                                <div class="login">
-                                    <div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-                                        <div id="loginBox">
-                                            <form id="loginForm">
-                                                <fieldset id="body">
-                                                    <fieldset>
-                                                        <label for="email">Email Address</label>
-                                                        <input type="text" name="email" id="email">
+                            @if(!Auth::guard('customer')->check())
+                                <div class="log">
+                                    <div class="login">
+                                        <div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
+                                            <div id="loginBox">
+                                                <form id="loginForm" method="post" action="{{route('customer.login')}}">
+                                                    @csrf
+                                                    <fieldset id="body">
+                                                        <fieldset>
+                                                            <label for="email">Email Address</label>
+                                                            <input type="text" name="email" id="email"
+                                                                   autocomplete="email">
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <label for="password">Password</label>
+                                                            <input type="password" name="password" id="password"
+                                                                   autocomplete="password">
+                                                        </fieldset>
+                                                        <input type="submit" id="login" value="Sign in">
+                                                        <label for="checkbox"><input type="checkbox" name="remember"
+                                                                                     id="checkbox"> <i>Remember
+                                                                me</i></label>
                                                     </fieldset>
-                                                    <fieldset>
-                                                        <label for="password">Password</label>
-                                                        <input type="password" name="password" id="password">
-                                                    </fieldset>
-                                                    <input type="submit" id="login" value="Sign in">
-                                                    <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember
-                                                            me</i></label>
-                                                </fieldset>
-                                                <span><a href="#">Forgot your password?</a></span>
-                                            </form>
+                                                    <span><a href="#">Forgot your password?</a></span>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="reg">
-                                <a href="{{route('register')}}">REGISTER</a>
-                            </div>
+                                <div class="reg">
+                                    <a href="{{route('customer.index')}}">REGISTER</a>
+                                </div>
+                            @else
+                                <div class="log">
+                                    <div class="login">
+                                        <div id="loginContainer" style="visibility: hidden"><a href="#" id="loginButton"
+                                                                                               style=""><span> </span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reg">
+                                    <a id="loginButton"
+                                       href="{{route('customer.detail')}}">{{Auth::guard('customer')->user()->customer_firstname}}</a>
+                                </div>
+                            @endif
                             <div class="cart box_1">
-                                <a href="{{route('checkout')}}">
+                                <a href="{{route('shopping_cart.index')}}">
                                     <h3><span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity"
                                                                                            class="simpleCart_quantity">0</span>
                                         items)<img src="{{asset('assets/frontend/images/bag.png')}}" alt=""></h3>
                                 </a>
-                                <p><a href="javascript:" class="simpleCart_empty">(empty cart)</a></p>
+                                <p><a href="javascript:" onclick="aFunction()" class="simpleCart_empty" >(empty cart)</a></p>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="create_btn">
-                                <a href="{{route('checkout')}}">CHECKOUT</a>
+                                <a href="{{route('shopping_cart.index')}}">CHECKOUT</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -137,86 +155,45 @@
                 <!-- start header menu -->
                 <ul class="megamenu skyblue">
                 </ul>
-{{--                <ul class="megamenu skyblue">--}}
-{{--                    <li class="active grid"><a class="color1" href="{{route('index')}}">Home</a></li>--}}
-{{--                    <li class="grid"><a class="color2" href="#">new arrivals</a>--}}
-{{--                        <div class="megapanel">--}}
-{{--                            <div class="row">--}}
-{{--                                @foreach( $header as $category)--}}
-{{--                                <div class="col1">--}}
-{{--                                    <div class="h_nav">--}}
+                <ul class="megamenu skyblue">
+                    <li class="active grid"><a class="color1" href="{{route('index')}}">Home</a></li>
+                    <li class="grid"><a class="color2" href="#">new arrivals</a></li>
+                    <li><a class="color4" href="#">Hot Sales</a></li>
+                    <li><a class="color6" href="#">Special Offer</a></li>
+                    <li><a class="color5" href="#">Product</a>
+                        <div class="megapanel">
+                            <div class="row">
+                                @foreach( $header as $category)
+                                    <div class="col1">
+                                        <div class="h_nav">
 
-{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
-{{--                                            <ul>--}}
-{{--                                                @foreach($category->details as $item)--}}
-{{--                                                <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
-{{--                                                @endforeach--}}
-{{--                                            </ul>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li><a class="color4" href="#">Hot Sales</a>--}}
-{{--                        <div class="megapanel">--}}
-{{--                            <div class="row">--}}
-{{--                                @foreach( $header as $category)--}}
-{{--                                    <div class="col1">--}}
-{{--                                        <div class="h_nav">--}}
-
-{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
-{{--                                            <ul>--}}
-{{--                                                @foreach($category->details as $item)--}}
-{{--                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
-{{--                                                @endforeach--}}
-{{--                                            </ul>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                            <div class="row">--}}
-{{--                                <div class="col2"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li><a class="color5" href="#">Product</a>--}}
-{{--                        <div class="megapanel">--}}
-{{--                            <div class="row">--}}
-{{--                                @foreach( $header as $category)--}}
-{{--                                    <div class="col1">--}}
-{{--                                        <div class="h_nav">--}}
-
-{{--                                            <h4>{{$category->category_hdr_description}}</h4>--}}
-{{--                                            <ul>--}}
-{{--                                                @foreach($category->details as $item)--}}
-{{--                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>--}}
-{{--                                                @endforeach--}}
-{{--                                            </ul>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                            <div class="row">--}}
-{{--                                <div class="col2"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                                <div class="col1"></div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
+                                            <h4>{{$category->category_hdr_description}}</h4>
+                                            <ul>
+                                                @foreach($category->details as $item)
+                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="row">
+                                <div class="col2"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 
     @yield('content')
 
+    <customer-chat></customer-chat>
 
     <div class="foot-top">
         <div class="container">
@@ -310,12 +287,52 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    function aFunction() {
+        $.ajax({
+            type:'GET',
+            url:'/shopping_cart/destroyAll',
+            data:'',
+            success: function(){
+                console.log('ok');
+                // $('#form').find('#add_btn').attr('disabled', true);
+            }
+        });
+    }
+</script>
+<beautiful-chat
+    :participants="participants"
+    :titleImageUrl="titleImageUrl"
+    :onMessageWasSent="onMessageWasSent"
+    :messageList="messageList"
+    :newMessagesCount="newMessagesCount"
+    :isOpen="isChatOpen"
+    :close="closeChat"
+    :icons="icons"
+    :open="openChat"
+    :showEmoji="true"
+    :showFile="true"
+    :showEdition="true"
+    :showDeletion="true"
+    :showTypingIndicator="showTypingIndicator"
+    :showLauncher="true"
+    :showCloseButton="true"
+    :colors="colors"
+    :alwaysScrollToBottom="alwaysScrollToBottom"
+    :disableUserListToggle="false"
+    :messageStyling="messageStyling"
+    @onType="handleOnType"
+    @edit="editMessage"/>
 
 <script type="module">
 
     Vue.use(Chat);
+    Vue.use(CustomerChat);
     const app = new Vue({
         el: '#app',
+        components: {
+            CustomerChat,
+        },
     });
 </script>
 @stack('js')

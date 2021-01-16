@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
+
 @push('css')
+
 @endpush
+
 
 @section('breadcrumbs-area')
     <div class="breadcrumbs-area clearfix">
@@ -27,28 +30,25 @@
                     </button>
                 </div>
 
-                <form action="{{route('product.store')}}" method="post" id="product_create">
+                <form action="{{route('product.store')}}" method="post" id="product_create" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="product_id">Product ID</label>
-                            <input type="text" class="form-control" id="product_id" name="product_id"
-                                   required="required">
+                            <input type="text" class="form-control" id="product_id" name="product_id" required>
                         </div>
                         <div class="form-group">
                             <label for="product_name">Product Name</label>
-                            <input type="text" class="form-control" id="product_name" name="product_name"
-                                   required="required">
+                            <input type="text" class="form-control" id="product_name" name="product_name" required>
                         </div>
                         <div class="form-group">
                             <label for="product_description">Description</label>
                             <textarea class="form-control" rows="4" id="product_description" name="product_description"
-                                      required style="resize:none;"></textarea>
+                                     style="resize:none;"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="number" class="form-control" id="price" name="price"
-                                   required="required">
+                            <input type="number" class="form-control" id="price" name="price" step=".01" required>
                         </div>
                         <div class="form-group">
                             <label for="category_dtl_id" class="col-form-label">Category</label>
@@ -63,8 +63,23 @@
                         <div class="form-group">
                             <label for="quantity" class="col-form-label">Quantity</label>
                             <input type="number" class="form-control" id="quantity"
-                                   name="quantity" min="0" required="required">
+                                   name="quantity" min="0" required>
                         </div>
+                        <div class="form-group">
+                            <label for="product_status" class="col-form-label">Status</label>
+                            <select class="form-control" name="product_status" id="product_status" required>
+                                <option value="new">New</option>
+                                <option value="hot sales">Hot Sales</option>
+                                <option value="special offer">Special Offer</option>
+                                <option value="normal">Normal</option>
+                            </select>
+                        </div>
+
+                        <!-- Image -->
+                        <!-- <div class="form-group">
+                            <label for="product_image" class="col-form-label">Image</label>
+                            <input type="file" id="file" name="image_file" accept="image/*">
+                        </div> -->
 
                     </div>
                     <div class="modal-footer">
@@ -165,13 +180,13 @@
                                 <tr>
                                     <th>Product ID</th>
                                     <th>Product Name</th>
-                                    <th>Description</th>
+                                    <!-- <th>Description</th> -->
                                     <th>Price</th>
                                     <th>Category</th>
                                     <th>Quantity</th>
                                     <th>Status</th>
                                     <th>Active</th>
-                                    <th>Create At</th>
+                                    <!-- <th>Create At</th> -->
                                     <th>Update At</th>
                                     <th>Action</th>
                                 </tr>
@@ -190,6 +205,7 @@
 
 @push('js')
     <script type="text/javascript">
+
         $(document).ready(function () {
             baseTable = $('#baseTable').DataTable({
                 stateSave: true,
@@ -208,9 +224,9 @@
                     {
                         "data": "product_name"
                     },
-                    {
-                        "data": "product_description"
-                    },
+                    // {
+                    //     "data": "product_description"
+                    // },
                     {
                         "data": "price"
                     },
@@ -226,9 +242,9 @@
                     {
                         "data": "product_active"
                     },
-                    {
-                        "data": "created_at"
-                    },
+                    // {
+                    //     "data": "created_at"
+                    // },
                     {
                         "data": "updated_at"
                     },
@@ -256,4 +272,5 @@
         });
 
     </script>
+
 @endpush

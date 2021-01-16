@@ -17,6 +17,8 @@ class ShoppingCardHdr extends Migration
             $table->id();
             $table->string('cart_hdr_id');
             $table->string('customer_id');
+            $table->decimal('total',8,2);
+            $table->string('promo_code');
             $table->timestamps();
         });
     }

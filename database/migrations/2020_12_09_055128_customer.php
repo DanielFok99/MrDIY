@@ -19,10 +19,12 @@ class Customer extends Migration
             $table->string('email')->unique();
             $table->string('customer_firstname');
             $table->string('customer_lastname');
+            $table->boolean('gender');
             $table->string('contact')->unique();
             $table->string('password');
             $table->string('status');
             $table->text('address');
+            $table->text('shipping_address')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -5,12 +5,16 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ChatRoomController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Frontend\HeaderController;
+use App\Http\Controllers\Frontend\ShoppingCartController;
+use App\Http\Controllers\Frontend\CustomerController as FrontCustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PromoCodeController;
 use App\Http\Controllers\PromoCodeRecordController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\FrontProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -89,18 +93,32 @@ Route::domain('admin.mrdiy.test')->group(function () {
     Route::get('/product/data', [ProductController::class, 'index'])->name('product.data');
     Route::post('/product', [ProductController::class, 'store'])->name('product.store');
     Route::post('/product/update', [ProductController::class, 'update'])->name('product.update');
-    Route::get('product/active_inactive/{product_id}', [ProductController::class, 'active'])->name('product.active_inactive');
+    Route::get('/product/active_inactive/{product_id}', [ProductController::class, 'active'])->name('product.active_inactive');
 
+// Review Routes
+    Route::get('/review', [ReviewController::class, 'view'])->name('review.view');
+    Route::get('/review/data', [ReviewController::class, 'index'])->name('review.data');
+    Route::get('/review/active_inactive/{id}', [ReviewController::class, 'active'])->name('review.active_inactive');
 
 });
 
 Route::domain('store.mrdiy.test')->group(function () {
-//    Route::get('/home', [HeaderController::class, 'test'])->name('store.home');
+    Route::get('/home', [HeaderController::class, 'test'])->name('store.home');
+    Route::get('/add_to_cart/{product_id}', [ShoppingCartController::class, 'store'])->name('shopping_cart.store');
+    Route::get('/shopping_cart/destroyAll', [ShoppingCartController::class, 'destroyAll'])->name('shopping_cart.destroyAll');
+    Route::get('/shopping_cart/destroy/{id}', [ShoppingCartController::class, 'destroy'])->name('shopping_cart.destroy');
+    Route::get('/shopping_cart', [ShoppingCartController::class, 'index'])->name('shopping_cart.index');
+    Route::post('/shopping_cart/add_promo', [ShoppingCartController::class, 'add_promo'])->name('shopping_cart.add_promo');
+//    Route::get('/make_payment', [ShoppingCartController::class, 'make_payment'])->name('payment.index');
+
 
 
     Route::get('/', function () {
         return view('pages.frontend.index');
     })->name('index');
+    Route::get('/', [FrontProductController::class, 'index'])->name('index');
+    Route::get('/category/{category_dtl_id}', [FrontProductController::class, 'category'])->name('front_product.category');
+    Route::get('/product/{product_id}', [FrontProductController::class, 'detail'])->name('front_product.detail');
 
     Route::get('/checkout', function () {
         return view('pages.frontend.checkout');
@@ -121,4 +139,18 @@ Route::domain('store.mrdiy.test')->group(function () {
     Route::get('/women', function () {
         return view('pages.frontend.women');
     })->name('women');
+
+
+    Route::get('/test', function () {
+        dd(Auth::guard('customer')->check());
+    });
+    Route::post('/login', [FrontCustomerController::class, 'login'])->name('customer.login');
+    Route::get('/logout', function () {
+        Auth::guard('customer')->logout();
+    });
+    Route::get('/register', [FrontCustomerController::class, 'showRegisterForm'])->name('customer.index');
+    Route::post('/register', [FrontCustomerController::class, 'register'])->name('customer.register');
+    Route::get('/user', [FrontCustomerController::class, 'userDetail'])->name('customer.detail');
+    Route::post('/user', [FrontCustomerController::class, 'updateDetail'])->name('customer.detail.update');
+    Route::post('/password/update', [FrontCustomerController::class, 'passwordUpdate'])->name('customer.password.update');
 });
