@@ -170,7 +170,8 @@
                                             <h4>{{$category->category_hdr_description}}</h4>
                                             <ul>
                                                 @foreach($category->details as $item)
-                                                    <li><a href="#">{{$item->category_dtl_description}}</a></li>
+                                                <li><a href="{{route('front_product.category', $item->category_dtl_id)}}">{{$item->category_dtl_description}}</a></li>
+                                                    <!--<li><a href="#">{{$item->category_dtl_description}}</a></li>-->
                                                 @endforeach
                                             </ul>
                                         </div>

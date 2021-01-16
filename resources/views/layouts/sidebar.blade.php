@@ -23,7 +23,7 @@
                     <li><a href="{{route('product.view')}}"><i class="ti-package"></i><span>Product</span></a></li>
                     <li><a href="{{route('promo_code.view')}}"><i class="ti-layout-cta-btn-right"></i>
                             <span>Promo Code</span></a></li>
-                    <li><a href="{{route('customer.index')}}"><i class="ti-map-alt"></i> <span>customer</span></a></li>
+                    <li><a href="{{route('customer.index.1')}}"><i class="ti-map-alt"></i> <span>customer</span></a></li>
                     <li><a href="{{route('chatroom.index')}}"><i class="ti-dashboard"></i><span>Chatroom</span></a></li>
 
                 </ul>
