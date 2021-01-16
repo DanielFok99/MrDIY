@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class CustomerController extends Controller
 {
@@ -57,7 +59,46 @@ class CustomerController extends Controller
 
     public function showRegisterForm()
     {
-        return view('pages.frontend.register');
+        
+        $category_hdrs = DB::table('category_hdr')
+            ->select('category_hdr_description','category_hdr_id')
+            ->where('category_hdr_active','=','yes')
+            ->get();
+
+//        $hdr_id = $hdr->category_hdr_id;
+//        $hdr_id = 1;
+//        $result = DB::table('category_hdr')
+//            ->join('category_dtl', 'category_dtl.category_hdr_id', '=', 'category_hdr.category_hdr_id')
+//            ->select('category_dtl.category_dtl_description')
+//            ->where('category_hdr.category_hdr_active', '=', 'yes')
+//            ->where('category_dtl.category_dtl_active', '=', 'yes')
+//            ->where('category_hdr.category_hdr_id', '=', $hdr_id)
+//            ->get();
+
+        $categoryHdr = collect();
+        foreach ($category_hdrs as $item){
+            $hdr_id =  $item->category_hdr_id;
+            $details = collect();
+            $category_dtl = DB::table('category_hdr')
+                ->join('category_dtl', 'category_dtl.category_hdr_id', '=', 'category_hdr.category_hdr_id')
+                ->select('category_dtl.category_dtl_description','category_dtl.category_dtl_id')
+                ->where('category_hdr.category_hdr_active', '=', 'yes')
+                ->where('category_dtl.category_dtl_active', '=', 'yes')
+                ->where('category_hdr.category_hdr_id', '=', $hdr_id)
+                ->get();
+
+            foreach ($category_dtl as $dtlItem){
+                $details->push($dtlItem);
+            }
+
+
+            $item->details = $details;
+            $categoryHdr->push($item);
+//            dd($item);
+        }
+        
+        
+        return view('pages.frontend.register')->with('header',$categoryHdr);
     }
 
     public function register(Request $request)

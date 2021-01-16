@@ -18,6 +18,7 @@ use App\Http\Controllers\FrontProductController;
 use Illuminate\Support\Facades\Route;
 
 
+//Route::domain('admin.danielfok99.cyou')->group(function () {
 Route::domain('admin.mrdiy.test')->group(function () {
 
     Route::get('clear-cache', function () {
@@ -49,7 +50,7 @@ Route::domain('admin.mrdiy.test')->group(function () {
     Route::post('/staff/chgPass', [StaffController::class, 'changePass'])->name('staff.chgPass');
     Route::get('/staff/active_inactive/{id}', [StaffController::class, 'active'])->name('staff.active_inactive');
 
-    Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index');
+    Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index.1');
 
     Route::get('/chatroom', [ChatRoomController::class, 'index'])->name('chatroom.index');
 
@@ -102,6 +103,7 @@ Route::domain('admin.mrdiy.test')->group(function () {
 
 });
 
+//Route::domain('store.danielfok99.cyou')->group(function () {
 Route::domain('store.mrdiy.test')->group(function () {
     Route::get('/home', [HeaderController::class, 'test'])->name('store.home');
     Route::get('/add_to_cart/{product_id}', [ShoppingCartController::class, 'store'])->name('shopping_cart.store');
@@ -132,9 +134,9 @@ Route::domain('store.mrdiy.test')->group(function () {
         return view('pages.frontend.details');
     })->name('details');
 
-    Route::get('/register', function () {
-        return view('pages.frontend.register');
-    })->name('register');
+    // Route::get('/register', function () {
+    //     return view('pages.frontend.register');
+    // })->name('register');
 
     Route::get('/women', function () {
         return view('pages.frontend.women');
